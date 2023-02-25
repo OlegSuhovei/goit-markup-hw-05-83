@@ -168,7 +168,7 @@ img {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -1px;
   display: block;
   width: 100%;
   height: 04px;
@@ -183,12 +183,18 @@ img {
 }
 
 .contact {
+  position: relative;
+  display: block;
+  padding: 24px 0;
+
   font-style: normal;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: var(--primary-text-color);
+
+  transition: color var(--duration) var(--timing-function);
 }
 
 /*#endregion header*/
@@ -599,10 +605,27 @@ img {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   cursor: pointer;
+
+  transition: background-color var(--duration) var(--timing-function),
+  border-radius var(--duration) var(--timing-function);
+}
+
+.button-modal:hover,
+.button-modal:focus {
+  background-color:var(--accent-background-color);
+  border-radius: 4px;
+  border-radius: 50%;
 }
 
 .icon-modal {
   fill: #000000;
+
+  transition: fill var(--duration) var(--timing-function);
+}
+
+.button-modal:hover .icon-modal,
+.button-modal:focus .icon-modal {
+ fill: var(--page-background-color); 
 }
 
 /* секция Портфолио */
@@ -644,7 +667,8 @@ img {
 
   transition: color var(--duration) var(--timing-function),
     background-color var(--duration) var(--timing-function),
-    box-shadow var(--duration) var(--timing-function);
+    box-shadow var(--duration) var(--timing-function),
+     border-color var(--duration) var(--timing-function);
 }
 
 /* .btn-active {
